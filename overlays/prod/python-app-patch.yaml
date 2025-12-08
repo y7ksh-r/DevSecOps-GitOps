@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: python-app
-          image: <YOUR-ECR>/python-app:prod
+          image: 288937191843.dkr.ecr.ap-south-1.amazonaws.com/python-app:prod
           resources:
             limits:
               cpu: "200m"

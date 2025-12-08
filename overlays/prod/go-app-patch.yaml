@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: go-app
-          image: <YOUR-ECR>/go-app:prod
+          image: 288937191843.dkr.ecr.ap-south-1.amazonaws.com/go-app:prod
           resources:
             limits:
               cpu: "200m"

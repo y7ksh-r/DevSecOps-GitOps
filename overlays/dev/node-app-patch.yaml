@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: node-app
-          image: <YOUR-ECR>/node-app:dev
+          image: 288937191843.dkr.ecr.ap-south-1.amazonaws.com/node-app:dev
           resources:
             limits:
               cpu: "100m"
