@@ -11,7 +11,7 @@ spec:
   source:
     repoURL: https://github.com/y7ksh-r/devsecops-gitops.git
     targetRevision: main
-    path: overlays/dev/go-app
+    path: ../overlays/dev/go-app
   syncPolicy:
     automated:
       prune: true
