@@ -4,7 +4,7 @@ kind: Kustomization
 namespace: dev
 
 resources:
-  - ../../../base/go-app
+  - ../../base/go-app
 
 patchesStrategicMerge:
   - go-app-patch.yaml
