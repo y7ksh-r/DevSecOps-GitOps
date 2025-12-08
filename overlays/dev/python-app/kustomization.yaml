@@ -4,11 +4,7 @@ kind: Kustomization
 namespace: dev
 
 resources:
-  - ../../base/go-app
-  - ../../base/node-app
-  - ../../base/python-app
+  - ../../../base/python-app
 
 patchesStrategicMerge:
-  - go-app-patch.yaml
-  - node-app-patch.yaml
   - python-app-patch.yaml

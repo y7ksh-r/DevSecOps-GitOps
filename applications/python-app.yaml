@@ -11,7 +11,7 @@ spec:
   source:
     repoURL: https://github.com/y7ksh-r/devsecops-gitops.git
     targetRevision: main
-    path: overlays/dev
+    path: overlays/dev/python-app
   syncPolicy:
     automated:
       prune: true
