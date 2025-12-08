@@ -4,7 +4,7 @@ kind: Kustomization
 namespace: dev
 
 resources:
-  - ../../base/python-app
+  - ../../../base/python-app
 
 patchesStrategicMerge:
   - python-app-patch.yaml
