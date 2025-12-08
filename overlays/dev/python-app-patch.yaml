@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: python-app
-          image: 288937191843.dkr.ecr.ap-south-1.amazonaws.com/python-app:dev
+          image: 288937191843.dkr.ecr.ap-south-1.amazonaws.com/python-app:latest
           resources:
             limits:
               cpu: "100m"
