@@ -8,7 +8,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: go.devsecops.local
+    - host: go.devsecops.test
       http:
         paths:
           - path: /
@@ -19,7 +19,7 @@ spec:
                 port:
                   number: 80
 
-    - host: node.devsecops.local
+    - host: node.devsecops.test
       http:
         paths:
           - path: /
@@ -30,7 +30,7 @@ spec:
                 port:
                   number: 80
 
-    - host: python.devsecops.local
+    - host: python.devsecops.test
       http:
         paths:
           - path: /
