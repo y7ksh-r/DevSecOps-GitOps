@@ -1,2 +1,3 @@
 resources:
   - disallow-privileged.yaml
+  - require-resources.yaml
