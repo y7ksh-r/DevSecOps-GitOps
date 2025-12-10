@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: go-app-rollout
+  namespace: argocd
+spec:
+  project: default
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: dev
+  source:
+    repoURL: https://github.com/y7ksh-r/devsecops-gitops.git
+    targetRevision: main
+    path: overlays/dev-rollout
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
