@@ -25,7 +25,7 @@ spec:
     spec:
       containers:
         - name: go-app
-          image: 288937191843.dkr.ecr.ap-south-1.amazonaws.com/go-app:v2
+          image: 288937191843.dkr.ecr.ap-south-1.amazonaws.com/go-app:v3
           ports:
             - containerPort: 8080
           resources:
