@@ -3,8 +3,6 @@ kind: Rollout
 metadata:
   name: go-app-rollout
   namespace: dev
-  annotations:
-    argocd.argoproj.io/compare-options: IgnoreExtraneous
 spec:
   replicas: 2
   revisionHistoryLimit: 3
@@ -17,7 +15,6 @@ spec:
         - pause: { duration: 10 }
         - setWeight: 50
         - pause: { duration: 10 }
-
   selector:
     matchLabels:
       app: go-app-rollout
