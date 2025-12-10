@@ -1,0 +1,22 @@
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: allow-only-ecr
+spec:
+  validationFailureAction: Enforce
+  background: true
+  rules:
+    - name: validate-ecr-images
+      match:
+        any:
+          - resources:
+              kinds:
+                - Pod
+              namespaces:
+                - dev
+      validate:
+        message: "Only images from 288937191843.dkr.ecr.ap-south-1.amazonaws.com are allowed in the dev namespace."
+        pattern:
+          spec:
+            containers:
+              - image: "288937191843.dkr.ecr.ap-south-1.amazonaws.com/*"

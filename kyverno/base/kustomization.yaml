@@ -1,3 +1,4 @@
 resources:
   - disallow-privileged.yaml
   - require-resources.yaml
+  - allow-only-ecr.yaml
