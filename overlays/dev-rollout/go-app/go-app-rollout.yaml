@@ -10,13 +10,14 @@ spec:
   revisionHistoryLimit: 3
   strategy:
     canary:
+      maxSurge: 0
+      maxUnavailable: 1
       steps:
         - setWeight: 20
-        - pause:
-            duration: 10
+        - pause: { duration: 10 }
         - setWeight: 50
-        - pause:
-            duration: 10
+        - pause: { duration: 10 }
+
   selector:
     matchLabels:
       app: go-app-rollout
