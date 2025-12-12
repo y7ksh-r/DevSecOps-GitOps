@@ -1,2 +1,3 @@
 resources:
   - ../../base
+  - falco-exception.yaml
