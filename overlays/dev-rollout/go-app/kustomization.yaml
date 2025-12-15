@@ -6,3 +6,4 @@ namespace: dev
 resources:
   - go-app-rollout.yaml
   - go-app-rollout-service.yaml
+  - go-app-hpa.yaml
