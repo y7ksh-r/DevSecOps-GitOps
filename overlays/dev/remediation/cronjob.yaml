@@ -10,6 +10,10 @@ spec:
       template:
         spec:
           serviceAccountName: remediator
+          securityContext:
+            runAsNonRoot: true
+            seccompProfile:
+              type: RuntimeDefault
           containers:
           - name: remediator
             image: 288937191843.dkr.ecr.ap-south-1.amazonaws.com/kubectl:latest
@@ -20,6 +24,9 @@ spec:
               kubectl get pods -n dev --no-headers | \
               awk '$3=="Error" || $3=="Failed" {print $1}' | \
               xargs -r kubectl delete pod -n dev
+            securityContext:
+              allowPrivilegeEscalation: false
+              privileged: false
             resources:
               requests:
                 cpu: "50m"
