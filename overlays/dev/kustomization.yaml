@@ -8,3 +8,4 @@ resources:
   - node-app
   - python-app
   - ingress.yaml
+  - remediation

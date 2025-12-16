@@ -1,0 +1,23 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: auto-remediator
+  namespace: dev
+spec:
+  schedule: "*/2 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          serviceAccountName: remediator
+          containers:
+          - name: remediator
+            image: bitnami/kubectl:latest
+            command:
+            - /bin/sh
+            - -c
+            - |
+              kubectl get pods -n dev --no-headers | \
+              awk '$3=="Error" || $3=="Failed" {print $1}' | \
+              xargs -r kubectl delete pod -n dev
+          restartPolicy: OnFailure
