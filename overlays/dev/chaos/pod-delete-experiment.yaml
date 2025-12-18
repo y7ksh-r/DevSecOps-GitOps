@@ -1,0 +1,32 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: ChaosExperiment
+metadata:
+  name: pod-delete
+  namespace: dev
+spec:
+  definition:
+    scope: Namespaced
+    permissions:
+      - apiGroups: [""]
+        resources: ["pods"]
+        verbs: ["get","list","delete"]
+      - apiGroups: ["apps"]
+        resources: ["deployments","replicasets","statefulsets"]
+        verbs: ["get","list"]
+      - apiGroups: ["argoproj.io"]
+        resources: ["rollouts"]
+        verbs: ["get","list"]
+    image: litmuschaos/go-runner:3.24.0
+    imagePullPolicy: Always
+    command:
+      - /bin/bash
+    args:
+      - -c
+      - ./experiments -name pod-delete
+    env:
+      - name: TOTAL_CHAOS_DURATION
+        value: "30"
+      - name: CHAOS_INTERVAL
+        value: "10"
+      - name: FORCE
+        value: "false"
