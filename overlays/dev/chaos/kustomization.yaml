@@ -3,3 +3,4 @@ kind: Kustomization
 
 resources:
   - chaos-rbac.yaml
+  - go-app-pod-delete.yaml

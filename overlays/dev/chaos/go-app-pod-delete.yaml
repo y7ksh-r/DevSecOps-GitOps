@@ -1,0 +1,23 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: ChaosEngine
+metadata:
+  name: go-app-pod-delete
+  namespace: dev
+spec:
+  appinfo:
+    appns: dev
+    applabel: "app=go-app"
+    appkind: rollout
+  engineState: active
+  chaosServiceAccount: chaos-sa
+  experiments:
+  - name: pod-delete
+    spec:
+      components:
+        env:
+        - name: TOTAL_CHAOS_DURATION
+          value: "30"
+        - name: CHAOS_INTERVAL
+          value: "10"
+        - name: FORCE
+          value: "false"
