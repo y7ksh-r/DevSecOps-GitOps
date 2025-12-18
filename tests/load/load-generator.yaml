@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: load-generator
+  namespace: dev
+spec:
+  restartPolicy: Never
+  containers:
+    - name: load-generator
+      image: 288937191843.dkr.ecr.ap-south-1.amazonaws.com/node-app:latest
+      command:
+        - /bin/sh
+        - -c
+        - |
+          while true; do
+            for i in $(seq 1 10); do
+              curl -s http://go-app-rollout.dev.svc.cluster.local &
+            done
+            wait
+          done
+      resources:
+        requests:
+          cpu: "50m"
+          memory: "64Mi"
+        limits:
+          cpu: "100m"
+          memory: "128Mi"
