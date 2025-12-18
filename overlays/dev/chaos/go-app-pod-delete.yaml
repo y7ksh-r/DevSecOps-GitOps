@@ -6,7 +6,7 @@ metadata:
 spec:
   appinfo:
     appns: dev
-    applabel: "app=go-app"
+    applabel: "app=go-app-rollout"
     appkind: rollout
   engineState: active
   chaosServiceAccount: chaos-sa
