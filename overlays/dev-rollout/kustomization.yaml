@@ -7,6 +7,4 @@ resources:
   - go-app
   - ingress.yaml
 
-images:
-  - name: 288937191843.dkr.ecr.ap-south-1.amazonaws.com/go-app
-    newTag: 346551d46a29ffa306e189364936c2acdbd7385b
+
