@@ -6,3 +6,7 @@ namespace: dev
 resources:
   - go-app
   - ingress.yaml
+
+images:
+  - name: 288937191843.dkr.ecr.ap-south-1.amazonaws.com/go-app
+    newTag: dummy
