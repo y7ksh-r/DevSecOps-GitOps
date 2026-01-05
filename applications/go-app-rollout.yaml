@@ -4,6 +4,8 @@ metadata:
   name: go-app-rollout
   namespace: argocd
   annotations:
+    argocd-image-updater.argoproj.io/enabled: "true"
+
     argocd-image-updater.argoproj.io/image-list: >
       go-app=288937191843.dkr.ecr.ap-south-1.amazonaws.com/go-app
 
