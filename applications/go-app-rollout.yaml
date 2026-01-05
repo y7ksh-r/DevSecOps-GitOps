@@ -3,6 +3,15 @@ kind: Application
 metadata:
   name: go-app-rollout
   namespace: argocd
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: >
+      go-app=288937191843.dkr.ecr.ap-south-1.amazonaws.com/go-app
+
+    argocd-image-updater.argoproj.io/go-app.update-strategy: latest
+
+    argocd-image-updater.argoproj.io/go-app.allow-tags: regexp:^[a-f0-9]{7,40}$
+
+    argocd-image-updater.argoproj.io/write-back-method: git
 spec:
   project: default
   destination:
