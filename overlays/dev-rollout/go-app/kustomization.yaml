@@ -10,4 +10,4 @@ resources:
 
 images:
   - name: 288937191843.dkr.ecr.ap-south-1.amazonaws.com/go-app
-    newTag: 042868971b9deaf14e8e02f072cb78901b433761
+    newTag: c4ac205073885751f5183c1a790b4a8847f12cf6
